@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <h1><%= @product.new_record? ? 'Nuevo' : 'Editar' %> Producto</h1>
+      <%= form_for @product do |f| %>
+        <div class="form-group">
+          <%= f.text_field :name, class: "form-control input-lg", placeholder: "Ingresa el nombre del producto" %>
+        </div>
+        <div class="form-group">
+          <%= f.text_field :price, class: "form-control input-lg", placeholder: "Ingresa el precio del producto" %>
+        </div>
+        <div>
+          <%= f.submit @product.new_record? ? 'Nuevo' : 'Editar', class: "btn btn-primary btn-lg btn-block" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
